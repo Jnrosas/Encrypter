@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Encrypter</title>
 </head>
+
 <body>
   <header>
     <h1>Encrypter</h1>
   </header>
+
   <main>
     <div class="to-encrypt-section">
-      <textarea name="text-to-encrypt" class="text-to-encrypt" placeholder="Enter text to encrypt"></textarea>
+      <textarea name="text-to-encrypt" class="text-to-encrypt" placeholder="Enter text to encrypt" autofocus></textarea>
       <p class="lowercase"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_2_231)">
         <path
@@ -25,18 +28,26 @@
         </clipPath>
         </defs>
         </svg>
-        only lowercase, no signs nor symbols</p>
-        <input class="btne" type="button" value="Encrypt">
-        <input class="btnd" type="button" value="Decrypt">
+        only lowercase, no signs nor symbols
+      </p>
+      <input class="btne" type="button" value="Encrypt">
+      <input class="btnd" type="button" value="Decrypt">
+    </div>
+    
+    <div class="container-encrypted-section">
+      <div class="encrypted-section">
+        <textarea name="text-encrypted" class="text-encrypted"></textarea>
+        <input class="btnc" type="button" value="Copy">
       </div>
-    <div class="encrypted-section">
-      <textarea name="text-encrypted" class="text-encrypted"></textarea>
-      <input class="btnc" type="button" value="Copy">
+      
+      <div class="cover-encrypted-section">
+        <h4>Your encrypted text will show here</h4>
+      </div>
     </div>
   </main>
+
   <footer>
     <p>challenge 1 - ONE Alura Latam - Juan Rosas</p>
   </footer>
-  
 </body>
 </html>
