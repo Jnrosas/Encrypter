@@ -1,31 +1,63 @@
-function encrypt(string) {
-  let newtxt = ''
+function validateString(func){
+  let string = document.getElementById('text-to-encrypt').value;
+  string.toLowerCase();
+  if (/[a-z]*\d+[a-z]*/g.test(string)){
+    console.log('tiene numeros')
+    document.getElementById('cover-encrypted-section').style.display = 'none';
+    document.getElementById('text-encrypted').value = 'No special characters or signs, please'
+  } else if (/[a-z]+/g.test(string)) {
+      console.log('solo palabras')
+      func;
+    }
+}
+
+function encrypt() {
+  let string = document.getElementById('text-to-encrypt').value;
+  let newtxt = '';
   let code = {
-    a: 'qw',
-    e: 'er',
-    i: 'sd',
-    o: 'hj',
-    u: 'vb'
+    a: 'ai',
+    e: 'enter',
+    i: 'imes',
+    o: 'ober',
+    u: 'ufat'
   };
-  let added = false
+  let added = false;
   for (let i=0; i<string.length; i++){
     for (let x in code){
       if (string[i] == x){
-        newtxt += code[x]
-        added = true
-        break
+        newtxt += code[x];
+        added = true;
+        break;
       } else {
-        continue
+        continue;
       }
     }
     if (added == false){
-      newtxt += string[i]
+      newtxt += string[i];
     }
-    added = false
+    added = false;
   }
-  return newtxt
+  document.getElementById('cover-encrypted-section').style.display = 'none';
+  document.getElementById('text-encrypted').value = newtxt
 }
 
-  
-  let res = encrypt('casa rodante')
-  console.log(res)
+function decrypt(){
+  let string = document.getElementById('text-to-encrypt').value;
+  if (/ai/g.test(string)){
+    string = string.replaceAll(/ai/g, 'a');
+  } 
+  if (/enter/g.test(string)){
+    string = string.replaceAll(/enter/g, 'e')
+  } 
+  if (/imes/g.test(string)){
+    string = string.replaceAll(/imes/g, 'i')
+  } 
+  if (/ober/g.test(string)){
+    string = string.replaceAll(/ober/g, 'o')
+  } 
+  if (/ufat/g.test(string)){
+    string = string.replaceAll(/ufat/g, 'u')
+  }
+  document.getElementById('cover-encrypted-section').style.display = 'none';
+  document.getElementById('text-encrypted').value = string
+}

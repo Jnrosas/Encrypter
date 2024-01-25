@@ -15,7 +15,7 @@
 
   <main>
     <div class="to-encrypt-section">
-      <textarea name="text-to-encrypt" class="text-to-encrypt" placeholder="Enter text to encrypt" autofocus></textarea>
+      <textarea name="text-to-encrypt" class="text-to-encrypt" id="text-to-encrypt" placeholder="Enter text to encrypt" autofocus></textarea>
       <p class="lowercase"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_2_231)">
         <path
@@ -30,24 +30,26 @@
         </svg>
         only lowercase, no signs nor symbols
       </p>
-      <input class="btne" type="button" value="Encrypt">
-      <input class="btnd" type="button" value="Decrypt">
+      <input onclick="validateString(encrypt())" class="btne" type="button" value="Encrypt">
+      <input onclick="validateString(decrypt())" class="btnd" type="button" value="Decrypt">
     </div>
     
     <div class="container-encrypted-section">
       <div class="encrypted-section">
-        <textarea name="text-encrypted" class="text-encrypted"></textarea>
+        <textarea name="text-encrypted" class="text-encrypted" id="text-encrypted"></textarea>
         <input class="btnc" type="button" value="Copy">
       </div>
       
-      <div class="cover-encrypted-section">
+      <div class="cover-encrypted-section" id="cover-encrypted-section">
         <h4>Your encrypted text will show here</h4>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>challenge 1 - ONE Alura Latam - Juan Rosas</p>
+    <p>2024 - challenge 1 - ONE Alura Latam - Juan Rosas</p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
