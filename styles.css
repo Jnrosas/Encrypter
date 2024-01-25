@@ -154,14 +154,29 @@ main{
   margin-top: 3em;
 }
 
+.btne:hover {
+  background-color: rgb(7, 7, 62);
+  transition: 1s;
+}
+
 .btnd {
   background-color: cadetblue;
   margin-top: 3em;
 }
 
+.btnd:hover {
+  background-color: rgb(18, 133, 137);
+  transition: 1s;
+}
+
 .btnc {
   background-color: burlywood;
   margin-top: 6em;
+}
+
+.btnc:hover {
+  background-color: rgb(216, 161, 90);
+  transition: 1s;
 }
 
 footer {
