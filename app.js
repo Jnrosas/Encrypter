@@ -2,7 +2,7 @@ var string = '';
 
 function validateString(func){
   let str = document.getElementById('text-to-encrypt').value;
-  if (/^[a-z]+$/g.test(str)){
+  if (/^[a-z]+\s?/g.test(str)){
     func;
   } else {
       document.getElementById('cover-encrypted-section').style.display = 'none';
