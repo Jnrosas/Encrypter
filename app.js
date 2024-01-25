@@ -1,18 +1,17 @@
+var string = '';
+
 function validateString(func){
-  let string = document.getElementById('text-to-encrypt').value;
-  string.toLowerCase();
-  if (/[a-z]*\d+[a-z]*/g.test(string)){
-    console.log('tiene numeros')
-    document.getElementById('cover-encrypted-section').style.display = 'none';
-    document.getElementById('text-encrypted').value = 'No special characters or signs, please'
-  } else if (/[a-z]+/g.test(string)) {
-      console.log('solo palabras')
-      func;
+  let str = document.getElementById('text-to-encrypt').value;
+  if (/^[a-z]+$/g.test(str)){
+    func;
+  } else {
+      document.getElementById('cover-encrypted-section').style.display = 'none';
+      document.getElementById('text-encrypted').value = 'No uppercase, special characters nor signs, please'
     }
 }
 
 function encrypt() {
-  let string = document.getElementById('text-to-encrypt').value;
+  string = document.getElementById('text-to-encrypt').value;
   let newtxt = '';
   let code = {
     a: 'ai',
@@ -47,17 +46,37 @@ function decrypt(){
     string = string.replaceAll(/ai/g, 'a');
   } 
   if (/enter/g.test(string)){
-    string = string.replaceAll(/enter/g, 'e')
+    string = string.replaceAll(/enter/g, 'e');
   } 
   if (/imes/g.test(string)){
-    string = string.replaceAll(/imes/g, 'i')
+    string = string.replaceAll(/imes/g, 'i');
   } 
   if (/ober/g.test(string)){
-    string = string.replaceAll(/ober/g, 'o')
+    string = string.replaceAll(/ober/g, 'o');
   } 
   if (/ufat/g.test(string)){
-    string = string.replaceAll(/ufat/g, 'u')
+    string = string.replaceAll(/ufat/g, 'u');
   }
   document.getElementById('cover-encrypted-section').style.display = 'none';
-  document.getElementById('text-encrypted').value = string
+  document.getElementById('text-encrypted').value = string;
 }
+
+function capture(){
+  let copyText = document.getElementById('text-encrypted');
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copied the text: " + copyText.value);
+  document.getElementById('text-to-encrypt').value = '';
+  document.getElementById('text-encrypted').value = '';
+}
+
+function decrypt2(){
+  document.getElementById('cover-encrypted-section').style.display = 'none';
+  if (string){
+    document.getElementById('text-encrypted').value = string;
+  } else {
+    decrypt()
+  }
+}
+

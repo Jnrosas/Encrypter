@@ -31,17 +31,18 @@
         only lowercase, no signs nor symbols
       </p>
       <input onclick="validateString(encrypt())" class="btne" type="button" value="Encrypt">
-      <input onclick="validateString(decrypt())" class="btnd" type="button" value="Decrypt">
+      <input onclick="validateString(decrypt2())" class="btnd" type="button" value="Decrypt">
+      <input onclick="window.location.reload()" class="btnclear" type="button" value="Reset">
     </div>
     
     <div class="container-encrypted-section">
       <div class="encrypted-section">
         <textarea name="text-encrypted" class="text-encrypted" id="text-encrypted"></textarea>
-        <input class="btnc" type="button" value="Copy">
+        <input onclick="capture()" class="btnc" type="button" value="Copy">
       </div>
       
       <div class="cover-encrypted-section" id="cover-encrypted-section">
-        <h4>Your encrypted text will show here</h4>
+        <h4>Your encrypted text will be displayed here</h4>
       </div>
     </div>
   </main>
