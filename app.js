@@ -2,9 +2,9 @@ var string = '';
 
 function validateString(func){
   let str = document.getElementById('text-to-encrypt').value;
-  if (/[A-Z0-9]/g.test(str)){
+  if (/[A-Z0-9,.;'":\[\]\{\}~`\/!@#\$%\^&\*\(\)-\+=]/g.test(str)){
     document.getElementById('cover-encrypted-section').style.display = 'none';
-    document.getElementById('text-encrypted').value = 'No uppercase, special characters or numbers, please'
+    document.getElementById('text-encrypted').value = 'No uppercase, special characters, signs or numbers, please.'
   } else {
       func;
     }
